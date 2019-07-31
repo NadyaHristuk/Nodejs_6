@@ -19,21 +19,10 @@ app.get('/home', function (req, res) {
     res.send('Hello  -    ' + req.query.name + '   '+ req.query.age)
   })  
 
-  app.post('/:', function (req, res) {
-    res.send('Post')
-  })  
+  
 
-  app.put('/', function (req, res) {
-    res.send('Put')
-  })  
+ 
 
-  app.patch('/', function (req, res) {
-    res.send('Patch')
-  }) 
-
-  app.delete('/', function (req, res) {
-    res.send('Delete')
-  })
 
   app.use(function(req, res, next){
       let err = new Error ('not found');
@@ -43,9 +32,8 @@ app.get('/home', function (req, res) {
 
   app.use(function(err, req, res, next){
       res.status(err.status || 500);
-      res.render('error', {message: err.message, error: err});
-      })
-
+      res.send('error')
+  })
 app.listen(PORT, () =>{
     console.log('server is running on ' + PORT);
 });
