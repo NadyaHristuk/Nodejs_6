@@ -257,7 +257,7 @@ let allowCrossDomain = function(req, res, next) {
 app.use(allowCrossDomain); // plumbing it in as middleware
 ```
 
-## lock файлами в npm
+## Зачем нужны lock файлы в npm
 
 Это файл, который генерируется автоматически и хранит в себе полное дерево всех зависимостей с версиями. И после его генерации все пакеты устанавливаются по новой с версиями и зависимостями, которые там указаны.
 
@@ -303,4 +303,4 @@ app.listen(3000, function () {
 ```
 
 После запуска сервера в консоли можно увидеть следующее сообщение
-http://www.goodbehind.com/wp-content/uploads/2018/02/Screenshot-from-2018-02-04-18-05-02.png
+[![](http://www.goodbehind.com/wp-content/uploads/2018/02/Screenshot-from-2018-02-04-18-05-02.png)](http://http://www.goodbehind.com/wp-content/uploads/2018/02/Screenshot-from-2018-02-04-18-05-02.png)
