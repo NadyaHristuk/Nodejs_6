@@ -304,3 +304,6 @@ app.listen(3000, function () {
 
 После запуска сервера в консоли можно увидеть следующее сообщение
 [![](http://www.goodbehind.com/wp-content/uploads/2018/02/Screenshot-from-2018-02-04-18-05-02.png)](http://http://www.goodbehind.com/wp-content/uploads/2018/02/Screenshot-from-2018-02-04-18-05-02.png)
+
+
+И вот видео в котором объясняеться как подключиться к MongoDB Atlas - https://www.youtube.com/watch?v=KKyag6t98g8 - - в видео нужное обьяснение до 7 минуты - именно настройка кластера и получение ссылки, остальное уже не нужно
