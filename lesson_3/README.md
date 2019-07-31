@@ -303,4 +303,4 @@ app.listen(3000, function () {
 ```
 
 После запуска сервера в консоли можно увидеть следующее сообщение
-http://www.goodbehind.com/wp-content/uploads/2018/02/Screenshot-from-2018-02-04-18-05-02.png
+[![](http://www.goodbehind.com/wp-content/uploads/2018/02/Screenshot-from-2018-02-04-18-05-02.png)](http://http://www.goodbehind.com/wp-content/uploads/2018/02/Screenshot-from-2018-02-04-18-05-02.png)
