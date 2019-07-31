@@ -264,3 +264,43 @@ app.use(allowCrossDomain); // plumbing it in as middleware
 По умолчанию в npm, при установке пакетов у вас автоматически создается и обновляется файл package-lock.json. Вам не нужно ничего дополнительно делать. Вы просто должны закоммитить этот файл также, как и обычный файл проекта в репозиторий.
 
 Если же вы используете yarn, вместо npm, то у вас также автоматически генерируется файл yarn.lock, который лочит все версии.
+
+##О логгировании в Node.js
+https://habr.com/ru/post/209436/ - о целях логирования
+
+Morgan был создан для ведения журнала таким образом, что серверы, на Apache и Nginx, регистрируются в error_log или access_log.
+Morgan, предназначен для автоматического ведения запросов, ответов и связанных с ними данных.
+
+```
+const morgan = require('morgan');
+//This tells express to log via morgan
+//and morgan to log in the "dev" pre-defined format
+app.use(morgan('dev'));
+```
+
+Morgan: еще одно промежуточное ПО для регистрации HTTP-запросов для Node.js. Упрощает процесс регистрации запросов к вашему приложению. Вы можете думать о Моргане как о помощнике, который собирает журналы с вашего сервера - журналы ваших запросов. Экономит время разработчиков, поскольку им не нужно вручную создавать общие журналы. Он стандартизирует и автоматически создает журналы запросов.
+
+```
+var express = require('express')
+var morgan = require('morgan')
+
+var app = express()
+
+//use morgan middleware
+app.use(morgan('combined'))
+
+app.get('/', function (req, res) {
+  res.send('hello, world!')
+})
+
+
+//server is listening
+app.listen(3000, function () {
+	console.log("Server started...");
+	console.log("Morgan logger with express...");
+})
+
+```
+
+После запуска сервера в консоли можно увидеть следующее сообщение
+http://www.goodbehind.com/wp-content/uploads/2018/02/Screenshot-from-2018-02-04-18-05-02.png
