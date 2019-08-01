@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const MongoClient = require('mongodb').MongoClient;
 const ObjectID = require('mongodb').ObjectID;
-let db;
+
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
@@ -38,19 +38,14 @@ app.get('/artist/:id', (req, res) =>{
     
 })
 
-app.post('/artist', (req, res)=>{
-    let newArtist = {       
-        name: req.body.name
-    }
-    db.collection('artist').insert(newArtist, (err, result)=>{
-        if(err){
-            console.log(err);
-            return res.sendStatus(500);
-        }
-        res.res(result);
-    })
-    
-})
+app.post('/artists', function (req, res) {
+    const artist = {
+      id: Date.now(),
+      name: req.body.name
+    };
+    artists.push(artist);
+    res.send(artist);
+  })
 
 app.put('/artist/:id', (req, res) =>{
     let upArtist = artist.find(artist =>{
@@ -66,12 +61,7 @@ artist = artist.filter(artist =>{
       res.send(artist)  
 })
 
-MongoClient.connect('mongodb+srv://user:123@cluster0-jkmtu.mongodb.net/test?retryWrites=true&w=majority', (err, database) =>{
-    if(err){
-        return console.log('err from db');
-    }
-
-    db = database;
-    app.listen(3001, ()=>console.log('Listen on port 3001'));
-})
+app.listen(3011, function () {
+    console.log('API app started');
+  })
 
