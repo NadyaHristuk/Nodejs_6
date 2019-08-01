@@ -265,7 +265,8 @@ app.use(allowCrossDomain); // plumbing it in as middleware
 
 Если же вы используете yarn, вместо npm, то у вас также автоматически генерируется файл yarn.lock, который лочит все версии.
 
-##О логгировании в Node.js
+## О логгировании в Node.js
+
 https://habr.com/ru/post/209436/ - о целях логирования
 
 Morgan был создан для ведения журнала таким образом, что серверы, на Apache и Nginx, регистрируются в error_log или access_log.
